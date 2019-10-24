@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66732fcc-e61a-4a11-b454-fae8f592f21c" name="Default Changelist" comment="" />
+    <list default="true" id="66732fcc-e61a-4a11-b454-fae8f592f21c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/helper_methods/ArtistEndpointVerifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/helper_methods/ArtistEndpointVerifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rf_tests/artist_endpoint.robot" beforeDir="false" afterPath="$PROJECT_DIR$/rf_tests/artist_endpoint.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rf_tests/helper_kw.robot" beforeDir="false" afterPath="$PROJECT_DIR$/rf_tests/helper_kw.robot" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +21,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SYmeJn7VR6uCc0foN2trV1XvkJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python37/Scripts/robot.exe" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -37,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Robotel">
+  <component name="RunManager" selected="Python.ArtistEndpointVerifications (1)">
     <configuration name="ArtistEndpoint" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QA_Automation_Spotify" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,5 +228,16 @@
       <updated>1571748996300</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

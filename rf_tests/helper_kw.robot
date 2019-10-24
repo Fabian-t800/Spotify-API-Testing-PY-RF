@@ -3,6 +3,7 @@ Library           ../lib/helper_methods/ArtistEndpointVerifications.py    ${oaut
 
 *** Keywords ***
 Check Get Artist Endpoint
-    ${resp11}=    get_artist_verification
-    Set Global Variable    ${resp11}
-    LOG    ${resp11}
+    get_artist_verification
+
+Check Get Artists Related Artists Endpoint
+    get_artist_related_artists_verification
