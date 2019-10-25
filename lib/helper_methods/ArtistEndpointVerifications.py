@@ -23,9 +23,33 @@ class ArtistEndpointVerifications:
         if response == "<Response [200]>" and body is not None:
             logger.info("Response is correct(Response 200), body of the response is not empty.")
         else:
+            raise AssertionError(f"Expected response was <Response [200]>, instead received  response {response}\n + Body of the response is: {body}")
+
+    def get_artist_album_verification(self):
+        response = str(ArtistEndpoint(self.oauth, self.file_path).get_artists()[0])
+        body = ArtistEndpoint(self.oauth, self.file_path).get_artists()[1]
+        if response == "<Response [200]>" and body is not None:
+            logger.info("Response is correct(Response 200), body of the response is not empty.")
+        else:
+            raise AssertionError(f"Expected response was <Response [200]>, instead received  response {response}\n + Body of the response is: {body}")
+
+    def get_artists_top_tracks_verification(self):
+        response = str(ArtistEndpoint(self.oauth, self.file_path).get_artists()[0])
+        body = ArtistEndpoint(self.oauth, self.file_path).get_artists()[1]
+        if response == "<Response [200]>" and body is not None:
+            logger.info("Response is correct(Response 200), body of the response is not empty.")
+        else:
             raise AssertionError(
-                "Expected response was <Response [200]>, instead received " + response + "\n" + "Body of the response is: " + str(
-                    body))
+                f"Expected response was <Response [200]>, instead received  response {response}\n + Body of the response is: {body}")
+
+    def get_several_artists_verification(self):
+        response = str(ArtistEndpoint(self.oauth, self.file_path).get_artists()[0])
+        body = ArtistEndpoint(self.oauth, self.file_path).get_artists()[1]
+        if response == "<Response [200]>" and body is not None:
+            logger.info("Response is correct(Response 200), body of the response is not empty.")
+        else:
+            raise AssertionError(
+                f"Expected response was <Response [200]>, instead received  response {response}\n + Body of the response is: {body}")
 
 #
 # auth_token = RefreshToken(

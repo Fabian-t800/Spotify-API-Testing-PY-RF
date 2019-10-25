@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66732fcc-e61a-4a11-b454-fae8f592f21c" name="Default Changelist" comment="" />
+    <list default="true" id="66732fcc-e61a-4a11-b454-fae8f592f21c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/helper_methods/ArtistEndpointVerifications.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/helper_methods/ArtistEndpointVerifications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rf_tests/artist_endpoint.robot" beforeDir="false" afterPath="$PROJECT_DIR$/rf_tests/artist_endpoint.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rf_tests/helper_kw.robot" beforeDir="false" afterPath="$PROJECT_DIR$/rf_tests/helper_kw.robot" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +27,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python37/Scripts/robot.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Python/Python37" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
@@ -43,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ArtistEndpointVerifications (1)">
+  <component name="RunManager" selected="Python.Robotel">
     <configuration name="ArtistEndpoint" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QA_Automation_Spotify" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,7 +167,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="-m robot rf_tests --suite Artist Endpoint --test Check Get Artist Endpoint" />
+      <option name="PARAMETERS" value="-m robot rf_tests" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -170,7 +175,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="artist_endpoint" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="artist_endpoint" type="PythonConfigurationType" factoryName="Python">
       <module name="QA_Automation_Spotify" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -206,7 +211,6 @@
         <item itemvalue="Python.ArtistEndpoint" />
         <item itemvalue="Python.ArtistEndpointVerifications" />
         <item itemvalue="Python.RefreshToken" />
-        <item itemvalue="Python.artist_endpoint" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +232,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -8,6 +8,15 @@ Check Get Artist Endpoints
 Check artists related artists endpoint
     Check Get Artists Related Artists Endpoint
 
+Check Get Artists Several Albums Endpoint
+    Check Get Artists Several Albums Endpoint
+
+Check Get Artists Top Tracks Endpoint
+    Check Get Artists Top Tracks Endpoint
+
+Check Get Several Artits Endpoint
+    Check Get Several Artits Endpoint
+
 
 
 *** Keywords ***
