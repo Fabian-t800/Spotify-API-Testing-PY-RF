@@ -3,20 +3,18 @@ Resource          helper_kw.robot    # Library    ../lib/base_layer/ArtistEndpoi
 
 *** Test Cases ***
 Check Get Artist Endpoints
-    Check Get Artist Endpoint
+    Check Endpoint Get Artist
 
 Check artists related artists endpoint
-    Check Get Artists Related Artists Endpoint
+    Check Endpoint Get Artists Related Artists
 
 Check Get Artists Several Albums Endpoint
-    Check Get Artists Several Albums Endpoint
+    Check Endpoint Get Artists Several Albums
 
 Check Get Artists Top Tracks Endpoint
-    Check Get Artists Top Tracks Endpoint
+    Check Endpoint Get Artists Top Tracks
 
-Check Get Several Artits Endpoint
-    Check Get Several Artits Endpoint
-
-
+Check Get Several Artists Endpoint
+    Check Endpoint Get Several Artists
 
 *** Keywords ***
