@@ -48,19 +48,20 @@ class GrabFirstToken:
         return response, response.json()
 
     def post_code_to_env_variable(self):
-        with open(self.env_var_path, mode='r+') as json_file:
+        with open(self.env_var_path, mode='r') as json_file:
             data = json.load(json_file)
             env_values = data.get("values")
             for env_value in env_values:
                 if env_value['key'] == 'refresh_token':
                     if env_value['value'] == "":
-                        json_file.seek(54)
-                        json_file.write(self.request_new_token()[1]['refresh_token'])
-                        print(self.request_new_token()[1]['refresh_token'])
+                        env_value['value'] = self.request_new_token()[1]['refresh_token']
                         logger.info("Refresher token has been added to your the environment variables json file.")
+                        break
                     else:
                         logger.info("Refresher token was already present in the environment variables json file.")
                         print('Refresher token already present.')
+        with open(self.env_var_path, mode='w') as json_file:
+            json.dump(data, json_file, indent=4)
 
 
 
@@ -69,7 +70,8 @@ class GrabFirstToken:
 
 
 
-env_var_path = "D:\\Spotify_repo\\Spotify_Api_Testing\\Spotify_Api_Testing\\Environment Variables\\Spotify_API_fabian.postman_environment.json"
+
+env_var_path = "D:\\QA_Automation_Spotify\\config\\Spotify_API_fabian.postman_environment.json"
 pl = GrabFirstToken("https://accounts.spotify.com/authorize?client_id=c8798a52d0cf490798e54b8790c431ba&response_type"
                     "=code&redirect_uri=https://www.getpostman.com/oauth2/callback&scope=playlist-read-collaborative"
                     "%20playlist-modify-private%20playlist-modify-public%20playlist-read-private%20user-modify"
