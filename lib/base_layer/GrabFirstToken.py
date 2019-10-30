@@ -7,13 +7,29 @@ import json
 
 
 class GrabFirstToken:
-    password = "Devdev22"
-    username = "winterlord22"
-
-    def __init__(self, token_url, env_var_path, username="", password=""):
+    # TODO: Needs to be removed and read from a json_file
+    def __init__(self, token_url, env_var_path, credentials):
         self.token_url = token_url
         self.env_var_path = env_var_path
+        self.credentials = credentials
+        self.username = ""
+        self.password = ""
 
+    def read_credentials(self):
+        with open(self.credentials, mode='r') as json_file:
+            data = json.load(json_file)
+            for item in data:
+                if item['username'] is not None:
+                    self.username = item['username']
+                    logger.info('Username found and loaded.')
+                if item['password'] is not None:
+                    self.password = item['password']
+                    logger.info('Password found and loaded.')
+                break
+
+
+    # Quick and dirty: accesses the URL using selenium with chromedriver
+    # Returns access code
     def access_url(self):
         driver = webdriver.Chrome("chromedriver")
         driver.get(self.token_url)
@@ -31,6 +47,8 @@ class GrabFirstToken:
         finally:
             return driver.current_url
 
+    # Exchanges access code for refresher token
+    # TODO: cid_cid - needs to be read from env var json (hardcoding removal)
     def request_new_token(self):
         raw_code = self.access_url()
         code = raw_code[48:]
@@ -47,7 +65,9 @@ class GrabFirstToken:
         response = post(access_point_url, querystring, headers=headers)
         return response, response.json()
 
+    # Adds the refresher token to the  env var if one isn't already given
     def post_code_to_env_variable(self):
+        needs_update = None
         with open(self.env_var_path, mode='r') as json_file:
             data = json.load(json_file)
             env_values = data.get("values")
@@ -64,14 +84,3 @@ class GrabFirstToken:
         if needs_update:
             with open(self.env_var_path, mode='w') as json_file:
                 json.dump(data, json_file, indent=4)
-
-
-env_var_path = "D:\\QA_Automation_Spotify\\config\\Spotify_API_fabian.postman_environment.json"
-pl = GrabFirstToken("https://accounts.spotify.com/authorize?client_id=c8798a52d0cf490798e54b8790c431ba&response_type"
-                    "=code&redirect_uri=https://www.getpostman.com/oauth2/callback&scope=playlist-read-collaborative"
-                    "%20playlist-modify-private%20playlist-modify-public%20playlist-read-private%20user-modify"
-                    "-playback-state%20user-read-currently-playing%20user-read-playback-state%20user-read-private"
-                    "%20user-read-email%20user-library-modify%20user-library-read%20user-follow-modify%20user-follow"
-                    "-read%20user-read-recently-played%20user-top-read%20streaming%20app-remote-control",
-                    env_var_path).post_code_to_env_variable()
-print(pl)
