@@ -56,19 +56,14 @@ class GrabFirstToken:
                     if env_value['value'] == "":
                         env_value['value'] = self.request_new_token()[1]['refresh_token']
                         logger.info("Refresher token has been added to your the environment variables json file.")
+                        needs_update = True
                         break
                     else:
                         logger.info("Refresher token was already present in the environment variables json file.")
                         print('Refresher token already present.')
-        with open(self.env_var_path, mode='w') as json_file:
-            json.dump(data, json_file, indent=4)
-
-
-
-
-
-
-
+        if needs_update:
+            with open(self.env_var_path, mode='w') as json_file:
+                json.dump(data, json_file, indent=4)
 
 
 env_var_path = "D:\\QA_Automation_Spotify\\config\\Spotify_API_fabian.postman_environment.json"
