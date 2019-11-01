@@ -4,3 +4,5 @@
 /report.html
 /.idea/workspace.xml
 /lib/helper_methods/__pycache__/ArtistEndpointVerifications.cpython-37.pyc
+/debug.log
+/lib/base_layer/__pycache__/GetCredentials.cpython-37.pyc

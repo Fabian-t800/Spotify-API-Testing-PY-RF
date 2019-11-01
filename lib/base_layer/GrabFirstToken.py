@@ -7,7 +7,6 @@ import json
 
 
 class GrabFirstToken:
-    # TODO: Needs to be removed and read from a json_file
     def __init__(self, token_url, env_var_path, credentials):
         self.token_url = token_url
         self.env_var_path = env_var_path
@@ -26,7 +25,6 @@ class GrabFirstToken:
                     self.password = item['password']
                     logger.info('Password found and loaded.')
                 break
-
 
     # Quick and dirty: accesses the URL using selenium with chromedriver
     # Returns access code
