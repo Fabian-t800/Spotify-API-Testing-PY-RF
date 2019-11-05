@@ -36,6 +36,16 @@ WebPlayer UI Verification
     Verify Webplayer UI
 
 Upgrade to pro
-    Successful Login
-    Click Launch Webplayer Button
     Check upgrade to pro
+
+Create a new empty playlist
+    Create an empty playlist
+
+Play the first song in your custom library
+    Play first song in library
+
+Search For an Artist
+    Search for an artist - Positive
+
+Webplayer "Console" is present and has all needed UI elements
+    Webplayer Console UI Check

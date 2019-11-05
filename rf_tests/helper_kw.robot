@@ -3,6 +3,7 @@ Library           ../lib/helper_methods/ArtistEndpointVerifications.py    ${oaut
 Library           SeleniumLibrary
 Library           ../lib/base_layer/GetCredentials.py
 Library           Collections
+Resource          ../rf_tests/Pages.robot
 
 *** Keywords ***
 Check Endpoint Get Artist
@@ -29,6 +30,7 @@ Navigate To Login Page
 
 Login
     [Arguments]    ${username}    ${password}
+    Set Browser Implicit Wait    2
     ${username_field}=    Get Webelement    id=login-username
     ${password_field}=    Get Webelement    id=login-password
     Press Keys    ${username_field}    ${username}
@@ -96,8 +98,14 @@ Verify Webplayer UI
     Log    Recently Played label is present in the page    WARN
 
 Check upgrade to pro
-    ${upgrade_button}=    Get Webelement    //button[@class='btn btn--no-margin btn-black']
-    Click element    ${upgrade_button}
+    Successful Login
+    Set Browser Implicit Wait    3
+    go to    https://www.spotify.com/ro/purchase/products/
+    ${elements}=    Get Webelements    xpath=//h3[@class='card-heading']
+    Element text should be    ${elements}[0]    Spotify Premium
+    Element text should be    ${elements}[1]    Spotify Premium Family
+    Element text should be    ${elements}[2]    Premium for Students
+    Log    All elements are present!
 
 Get UN-PW
     ${creds}=    read_credentials    D:\\credentials_fab.json
@@ -105,3 +113,49 @@ Get UN-PW
     ${password}=    Get From List    ${creds}    1
     Set global variable    ${username}
     Set global variable    ${password}
+
+Create an empty playlist
+    Successful Login
+    Click Launch Webplayer Button
+    ${create_playlist_button_first}=    Get Webelement    Class=CreatePlaylistButton__svg-plus-path
+    Click Element    ${create_playlist_button_first}
+    ${new_playlist_name_inbox}=    Get Webelement    Class=inputBox-input
+    Press Keys    ${new_playlist_name_inbox}    Brand new playlist 1
+    Execute Javascript    document.querySelector('.bf5f0e3120a568434ce7ed7fe108e659-scss .button-group .btn-green').click()
+
+Play first song in library
+    Successful login
+    Click Launch Webplayer Button
+    ${first_playlist}=    Get Webelement    class=RootlistItem__link
+    Click Element    ${first_playlist}
+    ${play_button_click}=    set variable    document.querySelector('.btn.btn-green.false').click()
+    Wait Until Page Contains Element    class=col-xs-12
+    Execute Javascript    ${play_button_click}
+    sleep    7
+
+Search For an artist - Positive
+    Successful Login
+    Click Launch Webplayer Button
+    Sleep    1
+    ${search_button}=    Get Webelement    xpath=//a[@aria-label='Search']
+    Click element    ${search_button}
+    ${search_bar}=    Get Webelement    xpath=//input[@placeholder='Search for Artists, Songs, or Podcasts']
+    ${artist_name}=    Set Variable    Paul Hardcastle
+    Press Keys    ${search_bar}    ${artist_name}
+    sleep    3
+    Element should contain    class=d9eb38f5d59f5fabd8ed07639aa3ab77-scss     ${artist_name}
+
+Webplayer Console UI Check
+    Successful Login
+    Click Launch Webplayer Button
+    Wait until page contains element    class=now-playing-bar
+    Page should contain element    css:.control-button.spoticon-shuffle-16
+    Page should contain element    css:.control-button.spoticon-skip-back-16.control-button--disabled
+    Page should contain element    css:.control-button.spoticon-play-16.control-button--circled
+    Page should contain element    css:.control-button.spoticon-skip-forward-16
+    Page should contain element    css:.control-button.spoticon-repeat-16
+    Page should contain element    class=progress-bar
+    Page should contain element    css:.control-button.spoticon-queue-16
+    Page should contain element    css:.spoticon-devices-16.control-button
+    Page should contain element    class=volume-bar
+    Page should contain element    css:.spoticon-volume-16.control-button.volume-bar__icon
