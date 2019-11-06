@@ -15,16 +15,16 @@ _Selenium:_<br></br>
 	Selenium 3.141 was used, as such please proceed to install selenium using pip install selenium
 	
 _Chromedriver:_<br></br>
-	* Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/>Please download chromedriver from this link.</a>
-	* **Note:** please download the chromedriver_win32.zip, if you use windows.
+	*Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/>Please download chromedriver from this link.</a>
+	***Note:** please download the chromedriver_win32.zip, if you use windows.
 
 _Note:_ A link to how to use the pip install: <a href=https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing> Use pip for Installing </a>
 
 -------
 
-##Setup steps
+##Setup steps <br></br>
 ###Upon installing the required packages mentioned in the the Requirements section, please follow the steps described below:
-#### Creating a Spotify account:
+######Creating a Spotify account:
 In order to be able to run the test suites found in this git repository, it is neccesary to have a an active Spotify account (premium account is not required).
 * Please go to <a href=https://www.spotify.com/>Spotify and create a free account.</a>
 * Once you've successfuly created your account, go to your local repository (the folder in which you've cloned the online repo) and open the config folder (\QA_Automation_Spotify\config)
