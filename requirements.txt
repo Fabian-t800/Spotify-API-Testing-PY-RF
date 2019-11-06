@@ -1,4 +1,4 @@
-selenium
+selenium==3.141
 jsonschema
 requests==2.22.0
 robotframework==3.1.2
