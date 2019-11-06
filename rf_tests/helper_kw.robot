@@ -56,7 +56,7 @@ Verify Webplayer UI
     ${new_releases_button}=    Get Webelement    xpath=//a[@href='/browse/newreleases']
     ${genres_and_moods_button}=    Get Webelement    xpath=//a[@href='/browse/genres']
     ${discover_button}=    Get Webelement    xpath=//a[@href='/browse/discover']
-    ${upgrade_button}=    Get Webelement    //button[@class='btn btn--no-margin btn-black']
+    Comment    ${upgrade_button}=    Get Webelement    css:.btn.btn--no-margin.btn-black    Webelement no longer exists in page
     ${spotify_logo}=    Get Webelement    class=spotify-logo--text
     ${home_button}=    Get Webelement    xpath=//a[@class = 'link-subtle navBar-link ellipsis-one-line navBar-link--active']
     ${search_button}=    Get Webelement    xpath=//a[@aria-label='Search']
@@ -74,12 +74,12 @@ Verify Webplayer UI
     Log    Charts button has been found    WARN
     Page Should Contain Element    ${new_releases_button}
     Log    New releases button has been found    WARN
-    Page Should Contain Element    ${glenres_and_moods_button}
+    Page Should Contain Element    ${genres_and_moods_button}
     Log    Genres and moods button is present    WARN
     Page Should Contain Element    ${discover_button}
     Log    Discover button is present    WARN
-    Page Should Contain Element    ${upgrade_button}
-    Log    Upgrade button is present    WARN
+    Comment    Page Should Contain Element    ${upgrade_button}
+    Log    Upgrade button has been removed from the Webplayer UI    WARN
     Page Should Contain Element    ${spotify_logo}
     Log    Spotify logo is present    WARN
     Page Should Contain Element    ${home_button}
@@ -129,9 +129,8 @@ Play first song in library
     ${first_playlist}=    Get Webelement    class=RootlistItem__link
     Click Element    ${first_playlist}
     ${play_button_click}=    set variable    document.querySelector('.btn.btn-green.false').click()
-    Wait Until Page Contains Element    class=col-xs-12
+    Wait until page contains element    css:.col-xs-12.col-lg-3.col-xl-4    timeout=5    error=Element play button is not present and clickable
     Execute Javascript    ${play_button_click}
-    sleep    7
 
 Search For an artist - Positive
     Successful Login
@@ -143,7 +142,7 @@ Search For an artist - Positive
     ${artist_name}=    Set Variable    Paul Hardcastle
     Press Keys    ${search_bar}    ${artist_name}
     sleep    3
-    Element should contain    class=d9eb38f5d59f5fabd8ed07639aa3ab77-scss     ${artist_name}
+    Element should contain    class=d9eb38f5d59f5fabd8ed07639aa3ab77-scss    ${artist_name}
 
 Webplayer Console UI Check
     Successful Login

@@ -45,9 +45,10 @@ Once all these steps have been completed, you shouldw be ready to run the automa
   
 #### _For running the UI test suites, please ignore the code that partains to the API testing, as this will not currently be covered in this readme!_
 
-## Running the automate test suites
+## Running the automated test suites
 All test suites can be run from the RIDE user interface.
 * Click the UI_Testing and all the test suites should be displayed.
 * Click any and all the checkboxes for the test suites you'd like to run.
 * Once all the desired test suites have been selecte, press F8 (or click the Run button from the toolbar)
 * To see a detailed log of the runs, after each run click the Log button from the toolbar (Robotframework saves the runs as HTML files.
+* Once you've run the tests for as many times as required as the part of the final teardown process, please delete your credentials from the credentials_template.json file, leaving it blank as it was.
