@@ -4,7 +4,7 @@
 **Requirements:**
 For framework and installed package requirements, please check the requirements.txt
 
-**General installation steps:**
+**General installation steps:** <br></br>
 _Python:_<br></br>
 	**Python 3.7.4 was used, as such please proceed to install on your workstation from the following link: <a href= https://www.python.org/downloads/release/python-374/>Python version install </a>
 
@@ -24,9 +24,9 @@ _Note on cmd:_ A link to how to navigate with cmd is found here: <a href=https:/
 
 -------
 
-##Setup steps <br></br>
-###Upon installing the required packages mentioned in the the Requirements section, please follow the steps described below:
-######Creating a Spotify account:
+## Setup steps: <br></br>
+### Upon installing the required packages mentioned in the the Requirements section, please follow the steps described below:
+###### Creating a Spotify account:
 In order to be able to run the test suites found in this git repository, it is neccesary to have a an active Spotify account (premium account is not required).
 *Please go to <a href=https://www.spotify.com/>Spotify and create a free account.</a>
 *Once you've successfuly created your account, go to your local repository (the folder in which you've cloned the online repo) and open the config folder (\QA_Automation_Spotify\config)
