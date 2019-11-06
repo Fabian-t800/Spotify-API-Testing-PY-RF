@@ -28,11 +28,11 @@ _Note on cmd:_ A link to how to navigate with cmd is found here: <a href=https:/
 ###Upon installing the required packages mentioned in the the Requirements section, please follow the steps described below:
 ######Creating a Spotify account:
 In order to be able to run the test suites found in this git repository, it is neccesary to have a an active Spotify account (premium account is not required).
-* Please go to <a href=https://www.spotify.com/>Spotify and create a free account.</a>
-* Once you've successfuly created your account, go to your local repository (the folder in which you've cloned the online repo) and open the config folder (\QA_Automation_Spotify\config)
-  * In this folder you will find a file called credentials_template.json (the .json part might be hidden). Open this file using a text editor such as Microsoft Notepad or Notepad++.
-  * Once credentials_template.json file is open, please enter your username between the empty double quote marks and then proceed in a similar fashion with your password.
-  * Save a copy of the credentials_template.json outside the QA_Automation_Spotify folder.
+*Please go to <a href=https://www.spotify.com/>Spotify and create a free account.</a>
+*Once you've successfuly created your account, go to your local repository (the folder in which you've cloned the online repo) and open the config folder (\QA_Automation_Spotify\config)
+  *In this folder you will find a file called credentials_template.json (the .json part might be hidden). Open this file using a text editor such as Microsoft Notepad or Notepad++.
+  *Once credentials_template.json file is open, please enter your username between the empty double quote marks and then proceed in a similar fashion with your password.
+  *Save a copy of the credentials_template.json outside the QA_Automation_Spotify folder.
 	**Note:** The test suites will not run without valid credentials. These credentials are stored localy and are used exclusively to login to your Spotify account via the automated software testing suite (Selenium + Robot Framework)
   
 #### _For running the UI test suites, please ignore the code that partains to the API testing, as this will not currently be covered in this readme._
