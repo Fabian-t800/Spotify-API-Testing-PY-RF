@@ -6,19 +6,21 @@ For framework and installed package requirements, please check the requirements.
 
 **General installation steps:**
 _Python:_<br></br>
-	Python 3.7.4 was used, as such please proceed to install on your workstation from the following link: <a href= https://www.python.org/downloads/release/python-374/>Python version install </a>
+	**Python 3.7.4 was used, as such please proceed to install on your workstation from the following link: <a href= https://www.python.org/downloads/release/python-374/>Python version install </a>
 
-_Robot Framework:_<br></br>
-	Robot Framework 3.1.2 was used, as such please proceed to install Robot Framework using the pip install robotframework
-	
-_Selenium:_<br></br>
-	Selenium 3.141 was used, as such please proceed to install selenium using pip install selenium
+Once you have Python installed, you can proceed to install the requirements by using pip install -r requirements.txt<br></br>
+	**In order to successfully install the requirements, it is advised that you follow the steps described below:<br></br>
+		***Open command line (cmd): Click the windows button, and type cmd
+			*Once the command line is opened, please navigate to the folder where you've cloned the git repository. (or just read the note on cmd navigation below)
+			*Once in the folder, run the following command: pip install -r requirements.txt
 	
 _Chromedriver:_<br></br>
-	*Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/>Please download chromedriver from this link.</a>
+	**Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/>Please download chromedriver from this link.</a>
 	***Note:** please download the chromedriver_win32.zip, if you use windows.
 
-_Note:_ A link to how to use the pip install: <a href=https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing> Use pip for Installing </a>
+_Note on pip:_ A link to how to use the pip install: <a href=https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing> Use pip for Installing </a>
+_Note on cmd:_ A link to how to navigate with cmd is found here: <a href=https://stackoverflow.com/questions/5576321/need-to-navigate-to-a-folder-in-command-prompt>Opening CMD in the required folder (First answer)</a>
+
 
 -------
 
