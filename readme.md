@@ -15,7 +15,7 @@ For framework and installed package requirements, please check the requirements.
 			* Once in the folder, run the following command: pip install -r requirements.txt
 	
 * _Chromedriver:_<br></br>
-	* Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/> Please download chromedriver from this link.</a>
+	* Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/> You can download chromedriver from this link.</a>
 	* **Note:** please download the chromedriver_win32.zip, if you use windows.
 
 _Note on pip:_ A link to how to use the pip install: <a href=https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing> Use pip for Installing </a><br></br>
@@ -34,6 +34,20 @@ In order to be able to run the test suites found in this git repository, it is n
   * Once credentials_template.json file is open, please enter your username between the empty double quote marks and then proceed in a similar fashion with your password.<br></br>
   * Save a copy of the credentials_template.json outside the QA_Automation_Spotify folder.<br></br>
 	**Note:** The test suites will not run without valid credentials. These credentials are stored localy and are used exclusively to login to your Spotify account via the automated software testing suite (Selenium + Robot Framework)<br></br>
+Open Command Line once again and type in ride.py . This should open up a python file.
+Click Run
+* The RIDE (Robotframework IDE) user interface should open now be open.
+	* Within RIDE you'll need to import the test suites:
+		* To do this you'll need to Click File\Open Directory\Location of your rf_tests file. This will cause all automated UI test suites as well as the helper keywords will be imported into RIDE.
+	* Within RIDE you'll also need to set your Pythonpath to the directory where you've cloned the github repository
+		* To do this you have to Click on Tools \ Preferences. When The Preferences window pops up, click on the Importing tab, and there add the your local github clone directory.
+Once all these steps have been completed, you shouldw be ready to run the automated test suites.
   
 #### _For running the UI test suites, please ignore the code that partains to the API testing, as this will not currently be covered in this readme!_
 
+## Running the automate test suites
+All test suites can be run from the RIDE user interface.
+* Click the UI_Testing and all the test suites should be displayed.
+* Click any and all the checkboxes for the test suites you'd like to run.
+* Once all the desired test suites have been selecte, press F8 (or click the Run button from the toolbar)
+* To see a detailed log of the runs, after each run click the Log button from the toolbar (Robotframework saves the runs as HTML files.
