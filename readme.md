@@ -5,10 +5,10 @@
 For framework and installed package requirements, please check the requirements.txt
 
 **General installation steps:** <br></br>
-_Python:_<br></br>
-	**Python 3.7.4 was used, as such please proceed to install on your workstation from the following link: <a href= https://www.python.org/downloads/release/python-374/>Python version install </a>
+* _Python:_<br></br>
+	* Python 3.7.4 was used, as such please proceed to install on your workstation from the following link: <a href= https://www.python.org/downloads/release/python-374/>Python version install </a>
 
-Once you have Python installed, you can proceed to install the requirements by using pip install -r requirements.txt<br></br>
+* Once you have Python installed, you can proceed to install the requirements by using pip install -r requirements.txt<br></br>
 	* In order to successfully install the requirements, it is advised that you follow the steps described below:<br></br>
 		* Open command line (cmd): Click the windows button, and type cmd
 			* Once the command line is opened, please navigate to the folder where you've cloned the git repository. (or just read the note on cmd navigation below)
