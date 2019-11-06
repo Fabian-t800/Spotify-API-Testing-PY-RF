@@ -14,8 +14,8 @@ For framework and installed package requirements, please check the requirements.
 			* Once the command line is opened, please navigate to the folder where you've cloned the git repository. (or just read the note on cmd navigation below)
 			* Once in the folder, run the following command: pip install -r requirements.txt
 	
-_Chromedriver:_<br></br>
-	* Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/>Please download chromedriver from this link.</a>
+* _Chromedriver:_<br></br>
+	* Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/> Please download chromedriver from this link.</a>
 	* **Note:** please download the chromedriver_win32.zip, if you use windows.
 
 _Note on pip:_ A link to how to use the pip install: <a href=https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing> Use pip for Installing </a><br></br>
