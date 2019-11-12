@@ -3,7 +3,7 @@ Library           ../lib/helper_methods/ArtistEndpointVerifications.py    ${oaut
 Library           SeleniumLibrary
 Library           ../lib/base_layer/GetCredentials.py
 Library           Collections
-Resource          ../rf_tests/Pages.robot
+Resource          Elements.robot
 
 *** Keywords ***
 Check Endpoint Get Artist
@@ -25,12 +25,11 @@ Navigate To Login Page
     ${BROWSER}    SET VARIABLE    googlechrome
     ${URL}    SET VARIABLE    https://www.spotify.com/ro/
     Open Browser    ${URL}    ${BROWSER}
-    ${elem}=    Get Webelement    xpath = //a[@href = 'https://www.spotify.com/ro/account/overview/']
-    click element    ${elem}
+    ${login_button}=    Get Webelement    xpath = //a[@href = 'https://www.spotify.com/ro/account/overview/']
+    click element    ${login_button}
 
 Login
     [Arguments]    ${username}    ${password}
-    Set Browser Implicit Wait    2
     ${username_field}=    Get Webelement    id=login-username
     ${password_field}=    Get Webelement    id=login-password
     Press Keys    ${username_field}    ${username}
@@ -39,8 +38,6 @@ Login
     Click element    ${login_button}
 
 Successful Login
-    Navigate To Login Page
-    Set Browser Implicit Wait    2
     Login    ${username}    ${password}
     ${navigate_to_webplayer_button}=    Get Webelement    class=mh-brand-wrapper
     Click Element    ${navigate_to_webplayer_button}
@@ -48,9 +45,10 @@ Successful Login
 Click Launch Webplayer Button
     ${launch_webplayer_button}=    Get Webelement    class=btn-stroked-dark
     Click Element    ${launch_webplayer_button}
+    Wait until page contains element    ${webplayer-left-navbar}
 
 Verify Webplayer UI
-    ${featured_button}=    Get Webelement    xpath=//a[@href='/browse/featured']
+    ${featured_button}=    Get Webelement    css:._137ec408b14ac4ea5aec6ded3d95f328-scss.be059487cfa7b71ee0f482c8e5be2b7e-scss
     ${podcasts_button}=    Get Webelement    xpath=//a[@href='/browse/podcasts']
     ${charts_button}=    Get Webelement    xpath=//a[@href='/browse/charts']
     ${new_releases_button}=    Get Webelement    xpath=//a[@href='/browse/newreleases']
@@ -58,7 +56,7 @@ Verify Webplayer UI
     ${discover_button}=    Get Webelement    xpath=//a[@href='/browse/discover']
     Comment    ${upgrade_button}=    Get Webelement    css:.btn.btn--no-margin.btn-black    Webelement no longer exists in page
     ${spotify_logo}=    Get Webelement    class=spotify-logo--text
-    ${home_button}=    Get Webelement    xpath=//a[@class = 'link-subtle navBar-link ellipsis-one-line navBar-link--active']
+    ${home_button}=    Get Webelement    css:.link-subtle.navBar-link.ellipsis-one-line.navBar-link--active
     ${search_button}=    Get Webelement    xpath=//a[@aria-label='Search']
     ${your_library_button}=    Get Webelement    xpath=//a[@aria-label='Your Library']
     ${playlist_title_label}=    Get Webelement    class=Rootlist__playlists-header
@@ -97,64 +95,36 @@ Verify Webplayer UI
     Page Should Contain Element    ${recently_played_label}
     Log    Recently Played label is present in the page    WARN
 
-Check upgrade to pro
-    Successful Login
-    Set Browser Implicit Wait    3
-    go to    https://www.spotify.com/ro/purchase/products/
-    ${elements}=    Get Webelements    xpath=//h3[@class='card-heading']
-    Element text should be    ${elements}[0]    Spotify Premium
-    Element text should be    ${elements}[1]    Spotify Premium Family
-    Element text should be    ${elements}[2]    Premium for Students
-    Log    All elements are present!
+Open-Browser-Navigate-to-Spotify
+    ${BROWSER}    SET VARIABLE    googlechrome
+    ${URL}    SET VARIABLE    https://www.spotify.com/ro/
+    Open Browser    ${URL}    ${BROWSER}
+    Set Selenium implicit wait    20
+    ${elem}=    Get Webelement    xpath = //a[@href = 'https://www.spotify.com/ro/account/overview/']
+    click element    ${elem}
 
-Get UN-PW
-    ${creds}=    read_credentials    D:\\credentials_fab.json
+Click create button
+    Execute Javascript    ${click_create_playlist_button}
+
+Click the play button
+    Wait until page contains element    ${list_of_songs}    timeout=10    error=Element play button is not present and clickable
+    Execute Javascript    ${clicking_the_play_button}
+    wait until page contains    0:02
+
+Get UN&PW
+    ${creds}=    read_credentials    ${credentials_path}
     ${username}=    Get From List    ${creds}    0
     ${password}=    Get From List    ${creds}    1
     Set global variable    ${username}
     Set global variable    ${password}
+    set selenium implicit wait    10
 
-Create an empty playlist
-    Successful Login
-    Click Launch Webplayer Button
-    ${create_playlist_button_first}=    Get Webelement    Class=CreatePlaylistButton__svg-plus-path
-    Click Element    ${create_playlist_button_first}
-    ${new_playlist_name_inbox}=    Get Webelement    Class=inputBox-input
-    Press Keys    ${new_playlist_name_inbox}    Brand new playlist 1
-    Execute Javascript    document.querySelector('.bf5f0e3120a568434ce7ed7fe108e659-scss .button-group .btn-green').click()
-
-Play first song in library
-    Successful login
-    Click Launch Webplayer Button
-    ${first_playlist}=    Get Webelement    class=RootlistItem__link
-    Click Element    ${first_playlist}
-    ${play_button_click}=    set variable    document.querySelector('.btn.btn-green.false').click()
-    Wait until page contains element    css:.col-xs-12.col-lg-3.col-xl-4    timeout=5    error=Element play button is not present and clickable
-    Execute Javascript    ${play_button_click}
-
-Search For an artist - Positive
-    Successful Login
-    Click Launch Webplayer Button
-    Sleep    1
-    ${search_button}=    Get Webelement    xpath=//a[@aria-label='Search']
-    Click element    ${search_button}
-    ${search_bar}=    Get Webelement    xpath=//input[@placeholder='Search for Artists, Songs, or Podcasts']
-    ${artist_name}=    Set Variable    Paul Hardcastle
-    Press Keys    ${search_bar}    ${artist_name}
-    sleep    3
-    Element should contain    class=d9eb38f5d59f5fabd8ed07639aa3ab77-scss    ${artist_name}
-
-Webplayer Console UI Check
-    Successful Login
-    Click Launch Webplayer Button
-    Wait until page contains element    class=now-playing-bar
-    Page should contain element    css:.control-button.spoticon-shuffle-16
-    Page should contain element    css:.control-button.spoticon-skip-back-16.control-button--disabled
-    Page should contain element    css:.control-button.spoticon-play-16.control-button--circled
-    Page should contain element    css:.control-button.spoticon-skip-forward-16
-    Page should contain element    css:.control-button.spoticon-repeat-16
-    Page should contain element    class=progress-bar
-    Page should contain element    css:.control-button.spoticon-queue-16
-    Page should contain element    css:.spoticon-devices-16.control-button
-    Page should contain element    class=volume-bar
-    Page should contain element    css:.spoticon-volume-16.control-button.volume-bar__icon
+Teardown Create a new empty playlist
+    Open Context Menu    ${topmost_playlist_item}
+    Then Wait until page contains element    css:.react-contextmenu.react-contextmenu--visible
+    Then Wait until page contains    Delete
+    ${click_delete}    Get Webelements    //*[contains(text(), 'Delete')]
+    Click Element    ${click_delete}[1]
+    Wait Until page contains element    css:.btn.btn-green    timeout=10    error=No green button has shown up
+    ${delete_button_green}    Get Webelements    xpath=//*[contains(text(), 'DELETE')]
+    Click Element    ${delete_button_green}[1]

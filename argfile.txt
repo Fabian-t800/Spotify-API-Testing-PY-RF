@@ -1,0 +1,6 @@
+# Set loglevel to Debug if tests start to fail
+--loglevel Fail
+--timestampoutputs
+--log spotifytestlogs.html
+--outputdir ./reports
+# --tagstatinclude Smoke

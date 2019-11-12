@@ -17,6 +17,12 @@ For framework and installed package requirements, please check the requirements.
 * _Chromedriver:_<br></br>
 	* Chromedriver 77.0.3865.40 was used. <a href=https://chromedriver.storage.googleapis.com/index.html?path=77.0.3865.40/> You can download chromedriver from this link.</a>
 	* **Note:** please download the chromedriver_win32.zip, if you use windows.
+	
+* _Chrome version:_ <br></br>
+	* All tests have been run on Chrome Version 78.0.3904.87 (Official Build) (64-bit)
+
+* _Windows version:_ <br></br>
+	* All tests have been run on Windows 10 Pro
 
 _Note on pip:_ A link to how to use the pip install: <a href=https://packaging.python.org/tutorials/installing-packages/#use-pip-for-installing> Use pip for Installing </a><br></br>
 _Note on cmd:_ A link to how to navigate with cmd is found here: <a href=https://stackoverflow.com/questions/5576321/need-to-navigate-to-a-folder-in-command-prompt>Opening CMD in the required folder (First answer)</a>
@@ -42,7 +48,7 @@ Click Run
 	* Within RIDE you'll also need to set your Pythonpath to the directory where you've cloned the github repository
 		* To do this you have to Click on Tools \ Preferences. When The Preferences window pops up, click on the Importing tab, and there add the your local github clone directory.
 Once all these steps have been completed, you shouldw be ready to run the automated test suites.
-  
+  32
 #### _For running the UI test suites, please ignore the code that partains to the API testing, as this will not currently be covered in this readme!_
 
 ## Running the automated test suites
