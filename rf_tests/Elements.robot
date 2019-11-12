@@ -44,3 +44,4 @@ ${upgrade_pro_url}    https://www.spotify.com/ro/purchase/products/
 ${Page_Title_Account_Overview}    css:.Page__title--TbL6e
 ${webplayer-left-navbar}    css:.navBar
 ${top-result-frame}    css:.d56489c83fe6b79db9f89b06371835cf-scss
+${play_song_button}    css:.btn.btn-green.false
