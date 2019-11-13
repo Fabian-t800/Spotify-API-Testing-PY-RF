@@ -1,6 +1,6 @@
 # Set loglevel to Debug if tests start to fail
---loglevel Fail
 --timestampoutputs
+--loglevel Debug
 --log spotifytestlogs.html
---outputdir ./reports
+--outputdir D:\QA_Automation_Spotify\reports
 # --tagstatinclude Smoke

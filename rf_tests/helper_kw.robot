@@ -22,6 +22,7 @@ Check Endpoint Get Several Artists
     get_artists_top_tracks_verification
 
 Navigate To Login Page
+    Get UN&PW
     ${BROWSER}    SET VARIABLE    googlechrome
     ${URL}    SET VARIABLE    https://www.spotify.com/ro/
     Open Browser    ${URL}    ${BROWSER}
@@ -30,8 +31,6 @@ Navigate To Login Page
 
 Login
     [Arguments]    ${username}    ${password}
-    ${username_field}=    Get Webelement    id=login-username
-    ${password_field}=    Get Webelement    id=login-password
     Press Keys    ${username_field}    ${username}
     Press Keys    ${password_field}    ${password}
     ${login_button}=    Get Webelement    id=login-button
@@ -118,6 +117,7 @@ Get UN&PW
     Set global variable    ${username}
     Set global variable    ${password}
     set selenium implicit wait    10
+    Set Screenshot Directory    D:\\QA_Automation_Spotify\\reports
 
 Teardown Create a new empty playlist
     Open Context Menu    ${topmost_playlist_item}
@@ -128,3 +128,20 @@ Teardown Create a new empty playlist
     Wait Until page contains element    css:.btn.btn-green    timeout=10    error=No green button has shown up
     ${delete_button_green}    Get Webelements    xpath=//*[contains(text(), 'DELETE')]
     Click Element    ${delete_button_green}[1]
+
+Setup - If login is needed.
+    Login    ${username}    ${password}
+    When Click Launch Webplayer Button
+
+Nav2LogAndLogin
+
+OpenBrowserAndGoToUrl
+    Get UN&PW
+    Open-Browser-Navigate-To-Spotify
+    Successful Login
+
+Clear-Fields-Login
+    Wait until page contains element    id=login-password
+    Wait until page contains element    id:login-username
+    Clear Element Text    id:login-username
+    Clear Element Text    id=login-password

@@ -39,9 +39,11 @@ ${your_library_button}    xpath=//a[@aria-label='Your Library']
 ${playlist_title_header}    class=Rootlist__playlists-header
 ${install_app_button}    xpath=//a[@href='/download']
 ${username_name}    xpath=//a[@href='/settings/account']
-${recently_played_label}    xpath=//*[contains(text(), 'Recently played')]
+${recently_played_label}    xpath=//*[contains(text(), 'Your heavy rotation')]
 ${upgrade_pro_url}    https://www.spotify.com/ro/purchase/products/
 ${Page_Title_Account_Overview}    css:.Page__title--TbL6e
 ${webplayer-left-navbar}    css:.navBar
 ${top-result-frame}    css:.d56489c83fe6b79db9f89b06371835cf-scss
 ${play_song_button}    css:.btn.btn-green.false
+${username_field}    id=login-username
+${password_field}    id=login-password
